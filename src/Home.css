@@ -1,0 +1,14 @@
+.card{
+  display: flex ;
+  background-color: #253341 ;
+  color: #22CC7E ;
+  font-style: italic;
+  text-align: center;
+  height: 45vh;
+  margin-bottom: 7px;
+}
+.card_body{
+  width:250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
