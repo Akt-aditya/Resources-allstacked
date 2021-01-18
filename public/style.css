@@ -5,24 +5,11 @@
   box-sizing: border-box;
   width:100%;
 }
-footer{
+#root{
     width:100%;
-    bottom:0px;
-    background-color: #253341;
-    color:#22CC7E;
-}
-#msg_name, #msg_email{
-  width: 20vw;
-  height: 7px;
-  border-radius: 13px;
-}
-input:focus{
- border-radius: 8px;
- border: 3px solid lightsalmon;
-}
-input:hover{
-background-color: lightcyan;
-border-radius: 18px;
+    height:100%;
+    margin:0;
+    padding: 0;
 }
 
 
