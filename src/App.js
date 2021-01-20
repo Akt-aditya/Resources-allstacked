@@ -18,7 +18,7 @@ function App() {
            <Cpp />
           </Route>
           <Route exact path="/">
-            Home 
+            {Home}
           </Route>
         </Switch>
       </article>

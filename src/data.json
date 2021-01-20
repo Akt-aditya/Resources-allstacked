@@ -5,8 +5,20 @@
     "shrtdes": "Learn android dvelopment"
   },
   {
-    "src": "https://youtube.com/embed/fis26HvvDII",
-    "title": "Learn adndroid dev",
-    "shrtdes": "Learn android dvelopment"
-  }
+    "src": "https://youtube.com/embed/Qqx_wzMmFeA",
+    "title": "Learn JavaScript",
+    "shrtdes": "Learn JavaScript"
+  },
+  {
+    "src":"https://youtube.com/embed/Znqv84xi8Vs",
+    "title":"Learn about event handaling in React JS",
+    "shrtdes":"This tutorial will teach you about events handaling in react js",
+    "longdes":"This tutorial will teach you about event handaling but it does include hooks"
+},
+{
+    "src":"https://youtube.com/embed/xlPxnc5uUPQ",
+    "title": "Learn index as anti-key pattern",
+    "shrtdes":"This tutorial will teach you about indexing in react js",
+    "longdes":"Learn about indexing as anti-pattern"
+}
 ]
