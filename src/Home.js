@@ -13,25 +13,33 @@ function Con(props){
 }
  var v = Video;
  
-function Home(){
-  return(
-    <>
-  <Con video="https://youtube.com/embed/zFZrkCIc2Oc" title="HTML and CSS by CS50" des="Best HTML and CSS course in full detail by harward university's CS50"/>
-  <Con video="https://www.youtube.com/embed/H4MkGzoACpQ" title="Responsive and animated navbar"  des="In order to understand it goodly you need to know Basics HTML , JS and transitons in CSS"/>
+
+  
+    
+  {/*<Con video="https://youtube.com/embed/zFZrkCIc2Oc" title="HTML and CSS by CS50" des="Best HTML and CSS course in full detail by harward university's CS50"/>
+  <Con video="https://www.youtube.com/embed/H4MkGzoACpQ" title="Responsive and animated navbar"  des="In order to understand it goodly you need to know Basics HTML , JS and transitons in CSS"/>*/}
+
    
-    {
-      v.map(
+   const Home = v.map(
         (s) => {
-          <Con video={s.src} title={s.title} des={s.shrtdes} />
+          <>
+       //  <Con video={s.src} title={s.title} des={s.shrtdes} />
+          <div>
+           {s.title}
+          </div>
+          hii
+         <iframe src={s.src} frameborder="0"></iframe>
+         console.log(s)
+         </>
         }
       )
-    }
+    
       
        
    
-   </>
-  )
-}
+
+  
+
 
 export default Home;
 export {Con};
