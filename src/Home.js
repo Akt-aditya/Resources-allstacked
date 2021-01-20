@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css"
+import Video from "./data.json"
 function Con(props){
   return(
    <div className="card">
@@ -10,12 +11,24 @@ function Con(props){
    </div>
   )
 }
-
+ var v = Video;
+ 
 function Home(){
   return(
     <>
   <Con video="https://youtube.com/embed/zFZrkCIc2Oc" title="HTML and CSS by CS50" des="Best HTML and CSS course in full detail by harward university's CS50"/>
   <Con video="https://www.youtube.com/embed/H4MkGzoACpQ" title="Responsive and animated navbar"  des="In order to understand it goodly you need to know Basics HTML , JS and transitons in CSS"/>
+   
+    {
+      v.map(
+        (s) => {
+          <Con video={s.src} title={s.title} des={s.shrtdes} />
+        }
+      )
+    }
+      
+       
+   
    </>
   )
 }
