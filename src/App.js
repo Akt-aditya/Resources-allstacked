@@ -11,9 +11,10 @@ import Signup from "./Componenets/Login"
 import Home from "./Home";
 import Cpp from "./Cpp/Cpp";
 import Header from "./Header/Header";
+import AuthProvider from "./Contexts/AuthContext"
 function App() {
   return (
-    <>
+    <AuthProvider>
       <header>
         <Header />
       </header>
@@ -25,16 +26,16 @@ function App() {
                 <Cpp />
               </Route>
               <Route exact path="/">
-                {Home}
+                <Signup />
               </Route>
               <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
+            
             </Switch>
           </article>
         
         <aside>Ads</aside>
       </div>
-    </>
+    </AuthProvider>
   );
 }
 

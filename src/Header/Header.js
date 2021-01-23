@@ -6,6 +6,7 @@ import { Link , BrowserRouter } from "react-router-dom";
 function Header() {
   return (
     <nav className="navbar">
+    <BrowserRouter>
         <div className="brand-title">Resources <br/>all-stacked</div>
         <a href="#" className="toggle-button">
           <span className="bar"></span>
@@ -29,12 +30,14 @@ function Header() {
           <li className="item search-con">
           <input type="search" className="search" id="search" />
           </li>
+          
           <li className="login item">
             <a href="/login">Login/Signup</a>
           </li>
         
       </ul>
       </div>
+      </BrowserRouter>
     </nav>
   );
 }

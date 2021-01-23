@@ -9,7 +9,7 @@ import App from "./App";
 
 ReactDOM.render(
   <BrowserRouter>
-  <Login />
+  <App />
   </BrowserRouter>,
   document.getElementById("root")
 );
