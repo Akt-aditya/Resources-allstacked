@@ -3,8 +3,13 @@ import "./Login.css";
 
 export default function Login() {
   return (
+    <div>
     <form>
+    <h1>Login</h1>
       <div className="container">
+        <label htmlFor="log_email" className="label_email">
+          <span className="">Email</span>
+           </label>
         <input
           type="email"
           name="log_email"
@@ -12,17 +17,15 @@ export default function Login() {
           autocomplete="off"
           required
         />
-        <label htmlFor="log_email" className="label_email">
-          <span className="">Email</span>
+        <label htmlFor="log_pass" className="label_pass">
+          <span className="">Password</span>
         </label>
         <input type="password" name="log_pass" id="log_pass" />
-        <label htmlFor="log_pass" className="label_pass">
-          <span className="" />
-        </label>
         <button className="log" type="submit">
           Login
         </button>
       </div>
     </form>
+    </div>
   );
 }

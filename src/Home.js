@@ -3,7 +3,7 @@ import "./Home.css";
 import Video from "./data.json";
 function Con(props) {
   return (
-    <div className="card">
+    <div className="card" key={props.id}>
       <iframe
         width="560px"
         src={props.video}
@@ -32,7 +32,7 @@ const Home = v.map(s => {
   return (
     <>
       {/*  <Con video={s.src} title={s.title} des={s.shrtdes} />*/}
-      <Con video={s.src} title={s.title} des={s.shrtdes} />
+      <Con key={s.id} video={s.src} title={s.title} des={s.shrtdes} />
     </>
   );
 
