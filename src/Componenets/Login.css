@@ -19,7 +19,10 @@ input{
   margin-left:10px;
   margin-right:10px;
 }
-.log,.change{
+#change{
+  margin-top: 20vh;
+}
+.log,.changer{
   height:40px;
   padding:10px;
 

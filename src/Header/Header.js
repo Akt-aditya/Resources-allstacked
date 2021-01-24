@@ -4,6 +4,9 @@ import "./header.css";
 import { Link , BrowserRouter } from "react-router-dom";
 
 function Header() {
+  function handlelogout(){
+    
+  }
   return (
     <nav className="navbar">
     <BrowserRouter>
@@ -31,8 +34,8 @@ function Header() {
           <input type="search" className="search" id="search" />
           </li>
           
-          <li className="login item">
-            <a href="/login">Login/Signup</a>
+          <li className="login item" onClick={handlelogout}>
+            Logout
           </li>
         
       </ul>

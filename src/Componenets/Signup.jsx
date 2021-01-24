@@ -2,14 +2,17 @@ import React,{useRef,useState} from "react";
 import "./Login.css";
 import {Alert} from "react-bootstrap"
 import {useAuth} from "../Contexts/AuthContext"
+import {Link, BrowserRouter,useHistory} from "react-router-dom"
 
 function Signup(){
   const emailRef = useRef();
   const passRef = useRef();
   const passwordRef = useRef();
-  const {signup, currentUser } = useAuth();
+  const {signup} = useAuth();
   const [error,setError] = useState('')
   const [loading,setLoading] = useState(false)
+  const history=useHistory();
+
   async function handleSubmit(e){
     e.preventDefault();
   if(passwordRef.current.value!==passRef.current.value){
@@ -18,6 +21,7 @@ function Signup(){
   try{
     setLoading(true)
   await signup(emailRef.current.value, passwordRef.current.value)
+  history.push('/')
   }
   catch{
     setError("Failed to create an account!")
@@ -28,7 +32,7 @@ function Signup(){
     <div>
     <form onSubmit={handleSubmit}>
     <h1>Signup</h1>
-    {currentUser}
+  
     {error && <Alert variant="danger">{error}</Alert>}
       <div className="container">
       <label htmlFor="log_name"><span>Name</span></label>
@@ -57,7 +61,12 @@ function Signup(){
           Signup
         </button>
       </div>
+      <BrowserRouter>
+      <div id="change">
       <a href="/login"><button className="change">Login</button></a>
+      <Link to="/login"><button className="change">Login</button></Link>
+      </div>
+      </BrowserRouter>
     </form>
     </div>
   );

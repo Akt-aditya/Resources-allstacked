@@ -1,9 +1,11 @@
 import React from "react";
 import "./Home.css";
 import Video from "./data.json";
+import Header from "./Header/Header"
+
 function Con(props) {
   return (
-    <div className="card" key={props.id}>
+    <div className="card" key={props.ide}>
       <iframe
         width="560px"
         src={props.video}
@@ -28,14 +30,22 @@ var v = Video;
   <Con video="https://www.youtube.com/embed/H4MkGzoACpQ" title="Responsive and animated navbar"  des="In order to understand it goodly you need to know Basics HTML , JS and transitons in CSS"/>*/
 }
 
-const Home = v.map(s => {
+const Hom = v.map(s => {
   return (
     <>
       {/*  <Con video={s.src} title={s.title} des={s.shrtdes} />*/}
-      <Con key={s.id} video={s.src} title={s.title} des={s.shrtdes} />
+      <Con ide={s.id} video={s.src} title={s.title} des={s.shrtdes} />
     </>
   );
 
 });
+function Home(){
+  return(
+  <>
+   <Header/>
+   {Hom}
+  </>
+  )
+}
 export default Home;
 export { Con };
