@@ -1,12 +1,9 @@
 import React from "react";
 import "./header.css";
-
 import { Link , BrowserRouter } from "react-router-dom";
 
 function Header() {
-  function handlelogout(){
-    
-  }
+
   return (
     <nav className="navbar">
     <BrowserRouter>
@@ -34,8 +31,8 @@ function Header() {
           <input type="search" className="search" id="search" />
           </li>
           
-          <li className="login item" onClick={handlelogout}>
-            Logout
+          <li className="login item" >
+            <a href="/profile">Profile</a>
           </li>
         
       </ul>

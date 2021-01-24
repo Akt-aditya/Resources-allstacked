@@ -34,8 +34,6 @@ function Login(){
   
     {error && <Alert variant="danger">{error}</Alert>}
       <div className="container">
-      <label htmlFor="log_name"><span>Name</span></label>
-      <input type="text" className="sign_name log_email"/>
         <label htmlFor="log_email" className="label_email">
           <span className="">Email</span>
            </label>
@@ -53,7 +51,7 @@ function Login(){
         <input type="password" name="log_pass" id="log_pass" ref={passwordRef}required/>
     
         <button className="log" type="submit" disabled={loading}>
-          Signup
+          Login
         </button>
       </div>
       <BrowserRouter>

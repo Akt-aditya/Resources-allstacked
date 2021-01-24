@@ -1,0 +1,8 @@
+.container{
+  display: flex;
+  text-align:center;
+}
+.btn{
+  width:100%;
+  background-color: royalblue;
+}

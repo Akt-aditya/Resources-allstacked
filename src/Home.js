@@ -42,8 +42,12 @@ const Hom = v.map(s => {
 function Home(){
   return(
   <>
+  <header>
    <Header/>
+   </header>
+   <article>
    {Hom}
+   </article>
   </>
   )
 }
