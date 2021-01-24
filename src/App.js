@@ -7,7 +7,7 @@ import {
   browserHistory
 } from "react-router-dom";
 import Login from "./Componenets/Login"
-import Signup from "./Componenets/Login"
+import Signup from "./Componenets/Signup"
 import Home from "./Home";
 import Cpp from "./Cpp/Cpp";
 import Header from "./Header/Header";

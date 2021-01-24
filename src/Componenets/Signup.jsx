@@ -1,26 +1,38 @@
-import React from "react";
+import React,{useRef,useState} from "react";
 import "./Login.css";
+import {Alert} from "react-bootstrap"
 import {useAuth} from "../Contexts/AuthContext"
 
 function Signup(){
   const emailRef = useRef();
   const passRef = useRef();
   const passwordRef = useRef();
-  const {signup} = useAuth();
+  const {signup, currentUser } = useAuth();
   const [error,setError] = useState('')
-  function handleSubit(e){
+  const [loading,setLoading] = useState(false)
+  async function handleSubmit(e){
     e.preventDefault();
-
- signup(emailRef.current.value, passwordRef.curent.value)
-
+  if(passwordRef.current.value!==passRef.current.value){
+    return setError('Passwords do not match!')
+  }
+  try{
+    setLoading(true)
+  await signup(emailRef.current.value, passwordRef.current.value)
+  }
+  catch{
+    setError("Failed to create an account!")
+  }
+  setLoading(false)
   }
   return(
     <div>
-    <form>
-    <h1>Login</h1>
+    <form onSubmit={handleSubmit}>
+    <h1>Signup</h1>
+    {currentUser}
+    {error && <Alert variant="danger">{error}</Alert>}
       <div className="container">
       <label htmlFor="log_name"><span>Name</span></label>
-      <input type="text" class="sign_name log_email"/>
+      <input type="text" className="sign_name log_email"/>
         <label htmlFor="log_email" className="label_email">
           <span className="">Email</span>
            </label>
@@ -37,11 +49,11 @@ function Signup(){
         </label>
         <input type="password" name="log_pass" id="log_pass" ref={passwordRef}required/>
     
-      <label htmlFor="log_pass" className="label_pass">
+      <label htmlFor="log_password" className="label_pass">
           <span className="">Retype Password</span>
         </label>
-        <input type="password" name="log_pass" id="log_pass" ref={passRef} required />
-        <button className="log" type="submit">
+        <input type="password" name="log_pass" id="log_password" ref={passRef} required />
+        <button className="log" type="submit" disabled={loading}>
           Signup
         </button>
       </div>
@@ -50,4 +62,4 @@ function Signup(){
     </div>
   );
 }
-export {Signup};
+export default Signup;
