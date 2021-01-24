@@ -1,9 +1,12 @@
 import React from "react";
 import "./header.css";
-import { Link , BrowserRouter } from "react-router-dom";
+import { Link , BrowserRouter, useHistory } from "react-router-dom";
 
 function Header() {
-
+  const history=useHistory();
+  function handle(props){
+    history.push(props)
+  }
   return (
     <nav className="navbar">
     <BrowserRouter>
@@ -31,7 +34,7 @@ function Header() {
           <input type="search" className="search" id="search" />
           </li>
           
-          <li className="login item" >
+          <li className="login item" onClick={() => {handle("/profile")}} >
             <a href="/profile">Profile</a>
           </li>
         
@@ -39,7 +42,9 @@ function Header() {
       </div>
       </BrowserRouter>
     </nav>
-  );
+  
+
+);
 }
 
 

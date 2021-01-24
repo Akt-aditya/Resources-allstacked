@@ -6,6 +6,7 @@ import Home from "./Home";
 import Cpp from "./Cpp/Cpp";
 import Profile from "./Componenets/Profile"
 import Header from "./Header/Header";
+import PrivateRoutes from "./PrivateRoutes"
 import AuthProvider from "./Contexts/AuthContext";
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-             <Route exact path="/" component={Home}/>
+             <PrivateRoutes exact path="/" component={Home}/>
              <Route path="/signup" component={Signup}/>
              <Route path="/login" component={Login}/>
              <Route path="/cpp" component={Cpp}/>

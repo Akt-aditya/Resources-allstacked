@@ -27,6 +27,9 @@ function Login(){
   }
   setLoading(false)
   }
+  function handlechange(){
+    history.push("/signup")
+  }
   return(
     <div>
     <form onSubmit={handleSubmit}>
@@ -46,7 +49,7 @@ function Login(){
           required
         />
         <label htmlFor="log_pass" className="label_pass">
-          <span className="">New Password</span>
+          <span className="">Password</span>
         </label>
         <input type="password" name="log_pass" id="log_pass" ref={passwordRef}required/>
     
@@ -56,8 +59,8 @@ function Login(){
       </div>
       <BrowserRouter>
       <div id="change">
-      <a href="/signup"><button className="change">Signup</button></a>
-      <Link to="/signup"><button className="change">Signup</button></Link>
+      {/*<a href="/signup"><button className="change" onClick={handlechange} >Signup</button></a>*/}
+      <Link to="/signup"><button className="change" onClick={handlechange} >Signup</button></Link>
       </div>
       </BrowserRouter>
     </form>
