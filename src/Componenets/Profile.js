@@ -12,16 +12,16 @@ function Profile() {
     seterror('')
     try{
     await logout();
-    history.push("/login")
+    history.push("/login");
     }
     catch{
-      seterror("Failer to logout!");
+      setError("Failer to logout!");
     }
   }
   return (
     <Card className="container">
       <h1>Profile</h1>
-      {error && <Alert variant="danger"></Alert>}
+      {error && <Alert variant="danger">{error} </Alert>}
       <Card.Body>
         <h3>Hello, {currentUser.email}</h3> <br />
         <button className="btn btn-primary">Update profile</button>

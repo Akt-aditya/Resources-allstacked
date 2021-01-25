@@ -34,8 +34,8 @@ function Header() {
           <input type="search" className="search" id="search" />
           </li>
           
-          <li className="login item" onClick={() => {handle("/profile")}} >
-            <a href="/profile">Profile</a>
+          <li className="login item" onClick={() =>{handle("/profile")}} >
+            <a>Profile</a>
           </li>
         
       </ul>

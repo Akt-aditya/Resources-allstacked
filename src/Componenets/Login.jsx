@@ -7,7 +7,7 @@ import {Link, BrowserRouter, useHistory} from "react-router-dom"
 function Login(){
   const emailRef = useRef();
   const passwordRef = useRef();
-  const {login} = useAuth();
+  const {login,currentUser} = useAuth();
   const [error,setError] = useState('')
   const [loading,setLoading] = useState(false)
   const history = useHistory();
@@ -34,7 +34,6 @@ function Login(){
     <div>
     <form onSubmit={handleSubmit}>
     <h1>Login</h1>
-  
     {error && <Alert variant="danger">{error}</Alert>}
       <div className="container">
         <label htmlFor="log_email" className="label_email">
