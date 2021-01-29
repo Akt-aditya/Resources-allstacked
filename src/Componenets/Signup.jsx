@@ -61,12 +61,13 @@ function Signup(){
           Signup
         </button>
       </div>
-      <BrowserRouter>
+      
       <div id="change">
-      <a href="/login"><button className="change">Login</button></a>
-      <Link to="/login"><button className="change">Login</button></Link>
+      <Link to="/login" onClick={() => {
+        history.push('/login')
+      }}><button className="change">Login</button></Link>
       </div>
-      </BrowserRouter>
+      
     </form>
     </div>
   );

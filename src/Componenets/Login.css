@@ -9,7 +9,7 @@ form h1{
   display:flex;
   flex-direction:column;
   align-items: center;
-  height:500px;
+  height:300px;
   width:100%;
   color:black;
   text-shadow:1.5px 0 aqua;
@@ -20,9 +20,9 @@ input{
   margin-right:10px;
 }
 #change{
-  margin-top: 20vh;
+  margin-top:0px;
 }
-.log,.changer{
+.log,.change{
   height:40px;
   padding:10px;
 
@@ -30,12 +30,16 @@ input{
   background-color: royalblue;
   color:white;
 }
-input[type="email"],input[type="password"]{
+input[type="email"],input[type="password"],input[type="text"]{
   padding:10px;
   margin:7px;
 }
+#change h4{
+ margin:5px;
+ color:grey;
+ font-size: 20px;
+}
 input:focus,input:hover{
-  border:2px solid aqua;
   border-top: 0;
   outline: none;
   text-align:start;

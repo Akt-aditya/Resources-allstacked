@@ -2,7 +2,7 @@ import React,{useRef,useState} from "react";
 import "./Login.css";
 import {Alert} from "react-bootstrap"
 import {useAuth} from "../Contexts/AuthContext"
-import {Link, BrowserRouter, useHistory} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 
 function Login(){
   const emailRef = useRef();
@@ -12,20 +12,19 @@ function Login(){
   const [loading,setLoading] = useState(false)
   const history = useHistory();
 
-  async function handleSubmit(e){
-    e.preventDefault();
-  if(passwordRef.current.value!==passRef.current.value){
-    return setError('Passwords do not match!')
-  }
-  try{
-    setLoading(true)
-  await login(emailRef.current.value, passwordRef.current.value)
-  history.push("/")
-  }
-  catch{
-    setError("Failed to signin!")
-  }
-  setLoading(false)
+async function handleSubmit(e) {
+    e.preventDefault()
+
+    try {
+      setError("")
+      setLoading(true)
+      await login( emailRef.current.value,passwordRef.current.value )
+      history.push("/")
+    } catch {
+      setError("Failed to log in")
+    }
+
+    setLoading(false)
   }
   function handlechange(){
     history.push("/signup")
@@ -35,6 +34,7 @@ function Login(){
     <form onSubmit={handleSubmit}>
     <h1>Login</h1>
     {error && <Alert variant="danger">{error}</Alert>}
+     
       <div className="container">
         <label htmlFor="log_email" className="label_email">
           <span className="">Email</span>
@@ -56,12 +56,13 @@ function Login(){
           Login
         </button>
       </div>
-      <BrowserRouter>
+    
       <div id="change">
+      <h4>Dont,have an account? want to create one ?</h4>
       {/*<a href="/signup"><button className="change" onClick={handlechange} >Signup</button></a>*/}
-      <Link to="/signup"><button className="change" onClick={handlechange} >Signup</button></Link>
+      <Link to="/signup"><button className="change" disabled={loading} onClick={handlechange} >Signup</button></Link>
       </div>
-      </BrowserRouter>
+      
     </form>
     </div>
   );

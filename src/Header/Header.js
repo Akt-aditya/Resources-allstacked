@@ -1,15 +1,11 @@
 import React from "react";
 import "./header.css";
-import { Link , BrowserRouter, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const history=useHistory();
-  function handle(props){
-    history.push(props)
-  }
   return (
     <nav className="navbar">
-    <BrowserRouter>
+    
         <div className="brand-title">Resources <br/>all-stacked</div>
         <a href="#" className="toggle-button">
           <span className="bar"></span>
@@ -19,28 +15,28 @@ function Header() {
         <div className="navbar-links">
       <ul>
       
-          <li className="home item">
-            <a href="/">Home</a>
-          </li>
+          <Link className="home item" to="/">
+            <li className="item home">Home</li>
+          </Link>
 
-          <li className="item">
-            <a href="/cpp">C++</a>
-          </li>
+          <Link  to="/store">
+            <li className="item store">Store</li>
+          </Link>
 
-          <li className="blog item">
-            <a href="/blog">Blog</a>
-          </li>
+          <Link to="/blog" >
+            <li className="blog item">Blog</li>
+          </Link>
           <li className="item search-con">
           <input type="search" className="search" id="search" />
           </li>
           
-          <li className="login item" onClick={() =>{handle("/profile")}} >
-            <a>Profile</a>
-          </li>
+          <Link to="/profile" >
+            <li className="login item">Profile</li>
+          </Link>
         
       </ul>
       </div>
-      </BrowserRouter>
+      
     </nav>
   
 

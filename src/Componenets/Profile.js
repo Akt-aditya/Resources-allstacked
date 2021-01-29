@@ -9,9 +9,10 @@ function Profile() {
   const {currentUser,logout} = useAuth();
   const history=useHistory();
   async function handlelogout() {
-    seterror('')
+    setError('')
     try{
     await logout();
+    console.log("Logout");
     history.push("/login");
     }
     catch{
