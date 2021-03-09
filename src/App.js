@@ -1,5 +1,6 @@
 import React from "react";
 import {Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import "./style.css"
 import Login from "./Componenets/Login";
 import Signup from "./Componenets/Signup";
 import Home from "./Home";
@@ -10,7 +11,7 @@ import PrivateRoutes from "./PrivateRoutes"
 import AuthProvider from "./Contexts/AuthContext";
 function App() {
   return (
-    <div>
+    <div className="app">
       
         <Router>
           <AuthProvider>
